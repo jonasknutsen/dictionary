@@ -1,9 +1,13 @@
 const express = require('express')
 const next = require('next')
+const mongoose = require('mongoose')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
+
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost:27017/dorskordbok', { useNewUrlParser: true })
 
 app.prepare()
   .then(() => {
