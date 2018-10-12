@@ -4,12 +4,7 @@ class Header extends React.Component {
   render () {
     return (
       <header>
-        This is a magic header
-        <style jsx>{`
-          header {
-            text-align: center;
-          }
-        `}</style>
+        Dette er en header
       </header>
     )
   }
